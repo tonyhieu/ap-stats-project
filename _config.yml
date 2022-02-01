@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: AP Stats Project
 description: Stats Project for Mr. Deputron's Class
+baseurl: /ap-stats-project
