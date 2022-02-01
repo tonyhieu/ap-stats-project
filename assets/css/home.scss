@@ -1,0 +1,83 @@
+$bg-color: white;
+$text-color: black;
+
+:root {
+    --bg-color: #{$bg-color};
+    --text-color: #{$text-color};
+}
+
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.main-content {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    font-family: "Verdana", sans-serif;
+
+    .project-title {
+        font-size: 5em;
+        position: absolute;
+        top: 0%;
+    }
+    .caption {
+        font-size: 3em;
+        position: absolute;
+        top: 10%;
+    }
+    a, a:link, a:visited, a:hover, a:active {
+        font-size: 3em;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    a::after {
+        content: '';
+        background: var(--text-color);
+        display: block;
+        height: 5px;
+        width: 100%;
+        opacity: 1;
+    }
+    a::after:hover {
+        animation-duration: 1s;
+        animation-name: select;
+    }
+
+    @keyframes select {
+        from {
+            opacity: 0;
+            transform: translateY(10%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 30%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
