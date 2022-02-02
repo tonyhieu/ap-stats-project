@@ -23,5 +23,11 @@
             <a href="{{ site.baseurl }}/conclusions" class="col-sm" style="text-align: center;">Conclusions</a>
         </div>
     </div>
+
+    <script>
+      $("a").mouseout(function() {
+        $(this).addClass("wasHovered");
+      });
+    </script>
   </body>
 </html>

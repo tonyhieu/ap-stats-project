@@ -1,5 +1,6 @@
 $bg-color: white;
 $text-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
     --bg-color: #{$bg-color};
@@ -32,20 +33,20 @@ html, body {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    font-family: "Verdana", sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     .project-title {
-        font-size: 5em;
+        font-size: 8vh;
         position: absolute;
         top: 0%;
     }
     .caption {
-        font-size: 3em;
+        font-size: 6vh;
         position: absolute;
         top: 10%;
     }
     a, a:link, a:visited, a:hover, a:active {
-        font-size: 3em;
+        font-size: 3vw;
         color: var(--text-color);
         text-decoration: none;
     }
@@ -54,23 +55,40 @@ html, body {
         content: '';
         background: var(--text-color);
         display: block;
-        height: 5px;
+        height: 2px;
         width: 100%;
-        opacity: 1;
+        opacity: 0;
     }
-    a::after:hover {
-        animation-duration: 1s;
+    a.wasHovered::after {
+        animation-duration: 0.2s;
+        animation-name: deselect;
+        animation-fill-mode: forwards;
+    }
+    a:hover::after {
+        animation-duration: 0.2s;
         animation-name: select;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select {
         from {
             opacity: 0;
-            transform: translateY(10%);
+            transform: translateY(10px);
         }
         to {
             opacity: 1;
-            transform: translateY(0%);
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes deselect {
+        from {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(10px);
         }
     }
 

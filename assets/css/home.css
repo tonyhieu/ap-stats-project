@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 :root {
   --bg-color: white;
   --text-color: black;
@@ -33,23 +34,23 @@ html, body {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  font-family: "Verdana", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-content .project-title {
-  font-size: 5em;
+  font-size: 8vh;
   position: absolute;
   top: 0%;
 }
 
 .main-content .caption {
-  font-size: 3em;
+  font-size: 6vh;
   position: absolute;
   top: 10%;
 }
 
 .main-content a, .main-content a:link, .main-content a:visited, .main-content a:hover, .main-content a:active {
-  font-size: 3em;
+  font-size: 3vw;
   color: var(--text-color);
   text-decoration: none;
 }
@@ -58,41 +59,78 @@ html, body {
   content: '';
   background: var(--text-color);
   display: block;
-  height: 5px;
+  height: 2px;
   width: 100%;
-  opacity: 1;
+  opacity: 0;
 }
 
-.main-content a::after:hover {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+.main-content a.wasHovered::after {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-name: deselect;
+          animation-name: deselect;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.main-content a:hover::after {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
   -webkit-animation-name: select;
           animation-name: select;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes select {
   from {
     opacity: 0;
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 
 @keyframes select {
   from {
     opacity: 0;
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes deselect {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes deselect {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
 }
 
