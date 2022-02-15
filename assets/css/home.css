@@ -140,4 +140,8 @@ html, body {
   margin-left: 20%;
   margin-right: 20%;
 }
+
+.main-content .content p {
+  font-size: 20px;
+}
 /*# sourceMappingURL=home.css.map */
